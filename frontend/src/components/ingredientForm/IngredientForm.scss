@@ -1,0 +1,66 @@
+$ingredientForm-background-color: #ffffff;
+$ingredientForm-btn-primary-color: #5d0cff;
+$ingredientForm-btn-secondary-color: #9b00fa;
+$ingredientForm-edit-input-color: #FB3B3B;
+$ingredientForm-text-color: #000000;
+$ingredientForm-placeholder-color: #aa80aa;
+
+.ingredient-form {
+    background: $ingredientForm-background-color;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 5px;
+
+    .ingredient-input,
+    .ingredient-button {
+        border: none;
+        outline: none;
+    }
+
+    .ingredient-input {
+        padding: 14px 32px 14px 16px;
+        width: 70%;
+        background: transparent;
+        color: $ingredientForm-text-color;
+
+        &.edit {
+            border: 2px solid $ingredientForm-edit-input-color;
+        }
+    }
+
+    .ingredient-button {
+        width: 30%;
+        padding: 16px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        background: linear-gradient(90deg, $ingredientForm-btn-primary-color 0%, $ingredientForm-btn-secondary-color 100%);
+        color: #fff;
+        text-transform: capitalize;
+
+        &.edit {
+            border-radius: 0 4px 0 0;
+        }
+    }
+
+    @media (max-width: 426px) {
+        .ingredient-input {
+            padding: 14px 10px 15px 10px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        .container {
+            width: 300px;
+            min-height: 400px;
+            margin: 50px auto;
+        }
+
+        .ingredient-input {
+            padding: 14px 10px 15px 10px;
+        }
+    }
+
+    .ingredient-input::placeholder {
+        color: $ingredientForm-placeholder-color;
+    }
+}
