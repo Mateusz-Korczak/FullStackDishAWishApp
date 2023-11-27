@@ -28,7 +28,7 @@ DishWish is a fullstack application that helps you generate recipe ideas based o
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/dish-wish.git
+    git clone https://github.com/Mateusz-Korczak/FullStackDishAWishApp
     ```
 
 2. **Backend Setup:**
