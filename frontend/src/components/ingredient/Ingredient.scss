@@ -1,0 +1,38 @@
+$ingredient-row-border-color: #d1d3d4;
+$ingredient-icons-color: rgb(255, 255, 255);
+$ingredient-edit-icon-background-color: #0b87ff;
+$ingredient-delete-icon-background-color: #FB3B3B;
+
+.ingredient-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px auto;
+    color: #000000;
+    border-bottom: 2px solid $ingredient-row-border-color;
+    padding: 10px;
+    width: 90%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+
+    .edit-icon,
+    .delete-icon {
+        padding: 6px;
+        border-radius: 10%;
+        color: $ingredient-icons-color;
+    }
+
+    .edit-icon {
+        margin-right: 5px;
+        background-color: $ingredient-edit-icon-background-color;
+    }
+
+    .delete-icon {
+        background-color: $ingredient-delete-icon-background-color;
+    }
+}

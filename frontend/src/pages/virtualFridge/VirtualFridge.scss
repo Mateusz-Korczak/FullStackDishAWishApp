@@ -1,0 +1,214 @@
+$blue-background-light: #00bfff;
+$blue-background-dark: #9400d3;
+
+$virtual-fridge-container-background: #ffffff;
+$virtual-fridge-container-text-shadow: rgba(0, 0, 0, 0.2);
+
+$ingredients-container-background: #ffffff;
+
+$modal-background: #fb3b3b;
+$modal-text-color: #ffffff;
+
+$modal-button-gradient-start: #5d0cff;
+$modal-button-gradient-end: #9b00fa;
+
+$scrollbar-background: #ffffff;
+$scrollbar-thumb-color: #d1d3d4;
+$scrollbar-thumb-hover-color: #fb3b3b;
+
+$dish-wish-button-gradient-start: #0000;
+$dish-wish-button-gradient-middle: #fff5;
+$dish-wish-button-gradient-end: #0000;
+$dish-wish-button-background: #e97f02;
+$dish-wish-button-text-color: #fff;
+
+$dish-wish-button-hover-gradient-start: #0000;
+$dish-wish-button-hover-gradient-middle: #fff5;
+$dish-wish-button-hover-gradient-end: #0000;
+$dish-wish-button-hover-text-color: #fff;
+$dish-wish-button-hover-text-shadow: #0004;
+
+
+
+.blue-background {
+    height: 45vh;
+    background: linear-gradient(300deg, $blue-background-light, $blue-background-dark);
+}
+
+.virtual-fridge-container>* {
+    margin-bottom: 5vh;
+}
+
+.virtual-fridge-container {
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 80%;
+    max-width: 700px;
+
+    .hero-title {
+        width: 100%;
+        border-radius: 5px;
+        font-size: 24px;
+        font-size: 4xl;
+        font-weight: bold;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #ffffff;
+    }
+
+    .ingredients-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: $ingredients-container-background;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-radius: 10px;
+        padding-bottom: 32px;
+        width: 100%;
+    }
+}
+
+.modal {
+    background: $modal-background;
+    color: $modal-text-color;
+    border-radius: 10px;
+    justify-content: center;
+    height: 150px;
+    width: auto;
+    text-align: center;
+    margin: 50px 25px 0 25px;
+
+    h2 {
+        padding: 15px;
+        margin: 15px 0 15px 0;
+        height: 20px;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 16px;
+        border: none;
+        border-radius: 5%;
+        cursor: pointer;
+        outline: none;
+        background: linear-gradient(90deg, $modal-button-gradient-start 0%, $modal-button-gradient-end 100%);
+        color: #fff;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .modal {
+        width: fit-content;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 1024px),
+(max-width: 768px) {
+    .virtual-fridge-container {
+        width: 520px;
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 426px) {
+    .virtual-fridge-container {
+        width: 95%;
+        min-height: 400px;
+        margin: 50px auto;
+    }
+
+    .dish-wish-button {
+        width: 300px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-color;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $scrollbar-background;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-hover-color;
+}
+
+.dish-wish-button {
+    --c: #fff;
+    background: linear-gradient(90deg, $dish-wish-button-gradient-start 33%, $dish-wish-button-gradient-middle, $dish-wish-button-gradient-end 67%) var(--_p, 100%) / 300% no-repeat, $dish-wish-button-background;
+    color: #0000;
+    border-radius: 10px;
+    transform: perspective(500px) rotateY(calc(20deg * var(--_i, -1)));
+    text-shadow: calc(var(--_i, -1) * 0.08em) -.01em 0 var(--c), calc(var(--_i, -1) * -0.08em) .01em 2px #0004;
+    outline-offset: .1em;
+    transition: 0.3s;
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - 9.5rem);
+    bottom: 10%;
+    transform: translateX(-50%);
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+    cursor: pointer;
+    padding: .1em .3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dish-wish-button:hover,
+.dish-wish-button:focus-visible {
+    --_p: 0%;
+    --_i: 1;
+}
+
+.dish-wish-button:active {
+    text-shadow: none;
+    color: var(--c);
+    box-shadow: inset 0 0 9e9q $dish-wish-button-hover-text-shadow;
+    transition: 0s;
+}
